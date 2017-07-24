@@ -27,8 +27,8 @@ from six.moves import cPickle as pickle
 """
 url = 'https://commondatastorage.googleapis.com/books1000/'
 last_percent_reported = None
-#data_root = r'D:\\data\\Yuting\\Deep Learning' # Change me to store data elsewhere
-data_root = ''
+data_root = r'D:\\data\\Yuting\\Data' # Change me to store data elsewhere
+#data_root = ''
 def download_progress_hook(count, blockSize, totalSize):
   """A hook to report the progress of a download. This is mostly intended for users with
   slow internet connections. Reports every 5% change in download progress.
