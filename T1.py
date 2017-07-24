@@ -20,7 +20,7 @@ from six.moves import cPickle as pickle
 
 
 # Config the matlotlib backend as plotting inline in IPython
-%matplotlib inline
+#%matplotlib inline
 
 """
 1. download data
