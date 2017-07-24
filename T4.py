@@ -18,7 +18,7 @@ import random
 '''
 1. reload data
 '''
-data_root = r'D:\\data\\Deep Learning' # Change me to store data elsewhere
+data_root = r'D:\\data\\Yuting\\Deep Learning' # Change me to store data elsewhere
 pickle_file = os.path.join(data_root, 'notMNIST.pickle')
 
 with open(pickle_file, 'rb') as f:
