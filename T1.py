@@ -325,9 +325,9 @@ def extract_overlap(dataset_1, dataset_2):
         overlap[i].append(j)
   return overlap   
 
-%time overlap_test_train = extract_overlap(test_dataset[:200], train_dataset) 
-print('Number of overlaps:', len(overlap_test_train.keys()))
-display_overlap(overlap_test_train, test_dataset[:200], train_dataset)
+#%time overlap_test_train = extract_overlap(test_dataset[:200], train_dataset) 
+#print('Number of overlaps:', len(overlap_test_train.keys()))
+#display_overlap(overlap_test_train, test_dataset[:200], train_dataset)
 
 def extract_overlap_stop(dataset_1, dataset_2):
   overlap = {}
@@ -338,12 +338,12 @@ def extract_overlap_stop(dataset_1, dataset_2):
         break
   return overlap
 
-%time overlap_test_train = extract_overlap_stop(test_dataset[:200], train_dataset)
+#%time overlap_test_train = extract_overlap_stop(test_dataset[:200], train_dataset)
 
-print('Number of overlaps:', len(overlap_test_train.keys()))
-display_overlap(overlap_test_train, test_dataset[:200], train_dataset)
+#print('Number of overlaps:', len(overlap_test_train.keys()))
+#display_overlap(overlap_test_train, test_dataset[:200], train_dataset)
 
-MAX_MANHATTAN_NORM = 10
+#MAX_MANHATTAN_NORM = 10
 
 def extract_overlap_near(dataset_1, dataset_2):
   overlap = {}
@@ -357,10 +357,10 @@ def extract_overlap_near(dataset_1, dataset_2):
         overlap[i].append(j)
   return overlap
 
-%time overlap_test_train_near = extract_overlap_near(test_dataset[:200], train_dataset)
+#%time overlap_test_train_near = extract_overlap_near(test_dataset[:200], train_dataset)
 
-print('Number of near overlaps:', len(overlap_test_train_near.keys()))
-display_overlap(overlap_test_train_near, test_dataset[:200], train_dataset)
+#print('Number of near overlaps:', len(overlap_test_train_near.keys()))
+#display_overlap(overlap_test_train_near, test_dataset[:200], train_dataset)
 
 '''store sanit file'''
 import hashlib
@@ -374,11 +374,11 @@ def sanetize(dataset_1, dataset_2, labels_1):
       overlap.append(i) 
   return np.delete(dataset_1, overlap, 0), np.delete(labels_1, overlap, None)
 
-%time test_dataset_sanit, test_labels_sanit = sanetize(test_dataset[:200], train_dataset, test_labels[:200])
-print('Overlapping images removed: ', len(test_dataset[:200]) - len(test_dataset_sanit))
+#%time test_dataset_sanit, test_labels_sanit = sanetize(test_dataset[:200], train_dataset, test_labels[:200])
+#print('Overlapping images removed: ', len(test_dataset[:200]) - len(test_dataset_sanit))
 
-%time valid_dataset_sanit, valid_labels_sanit = sanetize(valid_dataset, train_dataset, valid_labels)
-print('Overlapping images removed: ', len(valid_dataset) - len(valid_dataset_sanit))
+#%time valid_dataset_sanit, valid_labels_sanit = sanetize(valid_dataset, train_dataset, valid_labels)
+#print('Overlapping images removed: ', len(valid_dataset) - len(valid_dataset_sanit))
 
 
 
@@ -416,7 +416,7 @@ y_test = test_labels
 for sample_size in [50,100,1000,5000]:
     x_train = train_dataset[:sample_size].reshape(sample_size,28*28)
     y_train = train_labels[:sample_size]
-    %time reg.fit(x_train,y_train)
+    reg.fit(x_train,y_train)
     print("accuracy rate: ",reg.score(x_test, y_test))
     
     pred_labels = reg.predict(x_test)
